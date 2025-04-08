@@ -57,6 +57,15 @@ target_link_libraries(mocap4r2_optitrack_driver_main
   ${LIBNATNET_SDK_LIBRARY}
 )
 
+add_executable(sample_client
+  src/mocap4r2_optitrack_driver/sample_client.cpp
+)
+ament_target_dependencies(sample_client ${dependencies})
+target_link_libraries(sample_client
+  ${PROJECT_NAME}
+  ${LIBNATNET_SDK_LIBRARY}
+)
+
 ament_target_dependencies(mocap4r2_optitrack_driver ${dependencies})
 target_link_libraries(mocap4r2_optitrack_driver ${LIBNATNET_SDK_LIBRARY})
 
